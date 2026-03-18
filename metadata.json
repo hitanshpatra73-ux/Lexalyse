@@ -1,0 +1,5 @@
+{
+  "name": "Lexalyse",
+  "description": "AI-Powered Legal Intelligence platform for legal research, statutory conversion, and case analysis.",
+  "requestFramePermissions": ["microphone"]
+}

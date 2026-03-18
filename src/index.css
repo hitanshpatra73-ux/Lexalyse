@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Syne:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-syne: "Syne", sans-serif;
+
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+
+  --color-background: #ffffff;
+  --color-foreground: #09090b;
+  --color-card: #ffffff;
+  --color-card-foreground: #09090b;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #09090b;
+  --color-primary: #09090b;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f4f4f5;
+  --color-secondary-foreground: #09090b;
+  --color-muted: #f4f4f5;
+  --color-muted-foreground: #71717a;
+  --color-accent: #f4f4f5;
+  --color-accent-foreground: #09090b;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+  --color-border: #e4e4e7;
+  --color-input: #e4e4e7;
+  --color-ring: #18181b;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+.markdown-body {
+  @apply text-foreground leading-relaxed space-y-6;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply text-foreground font-serif font-bold mt-10 mb-6 tracking-tight;
+}
+
+.markdown-body h1 { @apply text-4xl border-b border-border pb-4; }
+.markdown-body h2 { @apply text-3xl border-b border-border/50 pb-2; }
+.markdown-body h3 { @apply text-2xl; }
+
+.markdown-body p {
+  @apply mb-6 text-lg font-light;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply pl-8 mb-6 space-y-4;
+}
+
+.markdown-body ul { @apply list-disc marker:text-primary; }
+.markdown-body ol { @apply list-decimal marker:text-primary; }
+
+.markdown-body blockquote {
+  @apply border-l-4 border-primary pl-6 italic my-8 bg-secondary/30 py-6 rounded-r-3xl font-serif text-xl;
+}
+
+.markdown-body hr {
+  @apply border-border my-12;
+}
+
+.markdown-body strong {
+  @apply text-foreground font-bold bg-primary/10 px-1.5 py-0.5 rounded-md;
+}
+
+.markdown-body code {
+  @apply bg-secondary px-1.5 py-0.5 rounded-md font-mono text-sm text-primary;
+}
